@@ -1,0 +1,96 @@
+.cube1{
+  --i:0;
+  background-image: url('../../assets/pi.png');
+  backdrop-filter: blur(20px);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cube2{
+  --i:1;
+  background-image: url('../../assets/umkm.png');
+  backdrop-filter: blur(20px);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cube3{
+  --i:2;
+  background-image: url('../../assets/pi.png');
+  backdrop-filter: blur(20px);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cube4{
+  --i:3;
+  background-image: url('../../assets/logo.png');
+  backdrop-filter: blur(20px);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cube{
+  transform-style: preserve-3d;
+  transform: rotateX(-30deg);
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0%{
+    transform: rotateX(-30deg) rotateY(0deg);
+  }
+  100%{
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+.cube_span{
+  transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+}
+
+@media screen and (max-width: 768px){
+  .cube_span{
+    transform: rotateY(calc(90deg * var(--i))) translateZ(50px);
+  }
+  
+}
+
+.top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(90deg) translateZ(100px);
+  background: #ea5a0c71;
+}
+
+@media screen and (max-width: 768px){
+  .top{
+    transform: rotateX(90deg) translateZ(50px);
+  }
+}
+
+
+.top::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:#ea5a0c;
+  transform:translateZ(-250px);
+  filter: blur(30px);
+  box-shadow: 0 0 120px rgba(0, 255, 0, 0.2),
+  0 0 200px rgba(0, 255, 0, 0.4),
+  0 0 300px rgba(0, 255, 0, 0.6),
+}
+@media screen and (max-width: 768px){
+  .top::before{
+    transform:translateZ(-120px);
+  }
+}
